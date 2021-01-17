@@ -25,3 +25,6 @@ logs
 # other
 eclipse
 run
+
+# Minecraft
+servers.dat
