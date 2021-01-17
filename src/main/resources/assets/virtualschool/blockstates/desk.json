@@ -1,0 +1,29 @@
+{
+    "variants": 
+    {
+        "facing=up": 
+        { 
+            "model": "virtualschool:desk" 
+        },
+    
+        "facing=south": 
+        { 
+            "model": "virtualschool:desk" 
+        },
+    
+        "facing=east": 
+        { 
+            "model": "virtualschool:desk","y":270 
+        },
+    
+        "facing=west": 
+        { 
+            "model": "virtualschool:desk","y":90 
+        },
+    
+        "facing=north": 
+        { 
+            "model": "virtualschool:desk","y":180 
+        }
+    }
+}

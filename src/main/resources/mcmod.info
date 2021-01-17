@@ -1,0 +1,12 @@
+[
+{
+  "modid": "virtualschool",
+  "name": "Virtual School",
+  "description": "'Virtual School' mod made by Aggelos",
+  "version": "0.1",
+  "mcversion": "[1.12.2]",
+  "url": "",
+  "authorList": ["Aggelos"],
+  "logoFile": ""
+}
+]

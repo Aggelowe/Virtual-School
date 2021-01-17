@@ -1,0 +1,14 @@
+{
+  "minecraft:end/elytra": {
+    "criteria": {
+      "elytra": "2020-12-17 21:32:18 +0200"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "plains": "2020-12-17 21:32:18 +0200"
+    },
+    "done": false
+  }
+}

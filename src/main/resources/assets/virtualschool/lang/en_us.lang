@@ -1,0 +1,16 @@
+//Items
+item.notebook.name=Notebook
+item.rotation_wand.name=Rotation Wand
+item.destruction_wand.name=Destruction Wand
+
+//Creative Tabs
+itemGroup.virtualschool=Virtual School
+
+//Blocks
+tile.metal_chair.name=Metal Chair
+tile.lamp.name=Lamp
+tile.desk.name=Desk
+
+//KeyBinds
+key.categories.virtualschool=Virtual School
+key.speak=Speak

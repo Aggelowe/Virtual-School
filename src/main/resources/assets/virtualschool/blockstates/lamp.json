@@ -1,0 +1,29 @@
+{
+    "variants": 
+    {
+        "facing=up": 
+        { 
+            "model": "virtualschool:lamp" 
+        },
+    
+        "facing=south": 
+        { 
+            "model": "virtualschool:lamp" 
+        },
+    
+        "facing=east": 
+        { 
+            "model": "virtualschool:lamp","y":270 
+        },
+    
+        "facing=west": 
+        { 
+            "model": "virtualschool:lamp","y":90 
+        },
+    
+        "facing=north": 
+        { 
+            "model": "virtualschool:lamp","y":180 
+        }
+    }
+}

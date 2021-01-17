@@ -1,0 +1,20 @@
+{
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2020-12-13 11:54:07 +0200"
+    },
+    "done": true
+  },
+  "minecraft:end/elytra": {
+    "criteria": {
+      "elytra": "2020-12-13 11:51:57 +0200"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "plains": "2020-12-13 11:51:57 +0200"
+    },
+    "done": false
+  }
+}

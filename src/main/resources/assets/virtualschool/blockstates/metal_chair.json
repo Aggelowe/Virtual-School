@@ -1,0 +1,29 @@
+{
+    "variants": 
+    {
+        "facing=up": 
+        { 
+            "model": "virtualschool:metal_chair" 
+        },
+    
+        "facing=south": 
+        { 
+            "model": "virtualschool:metal_chair" 
+        },
+    
+        "facing=east": 
+        { 
+            "model": "virtualschool:metal_chair","y":270 
+        },
+    
+        "facing=west": 
+        { 
+            "model": "virtualschool:metal_chair","y":90 
+        },
+    
+        "facing=north": 
+        { 
+            "model": "virtualschool:metal_chair","y":180 
+        }
+    }
+}
