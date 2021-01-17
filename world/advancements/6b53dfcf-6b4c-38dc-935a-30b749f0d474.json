@@ -1,0 +1,26 @@
+{
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2020-12-10 13:27:41 +0200"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "zombie": "2020-12-10 13:27:41 +0200"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "zombie": "2020-12-10 13:27:41 +0200"
+    },
+    "done": false
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "plains": "2020-12-10 13:24:49 +0200"
+    },
+    "done": false
+  }
+}
