@@ -17,6 +17,11 @@ out
 build
 .gradle
 
+
+# logs
+*.log
+logs
+
 # other
 eclipse
 run
