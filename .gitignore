@@ -28,3 +28,5 @@ run
 
 # Minecraft
 servers.dat
+usercache.json
+usernamecache.json
