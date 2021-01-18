@@ -1,7 +1,5 @@
 package eu.margaritis.aggelos.projects.virtualschool.chat;
 
-import java.io.ByteArrayOutputStream;
-
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.DataLine.Info;
@@ -20,7 +18,6 @@ public final class VoiceReplyThread extends TickingThread {
 
 	private TargetDataLine microphone;
 	private SourceDataLine speakers;
-	private ByteArrayOutputStream output;
 	private int intBytesRead;
 	private final int chunkSize = 1024;
 	private byte[] data;
@@ -30,7 +27,6 @@ public final class VoiceReplyThread extends TickingThread {
 		Info info = new Info(TargetDataLine.class, getAudioFormat());
 		microphone = (TargetDataLine) AudioSystem.getLine(info);
 		microphone.open(getAudioFormat());
-		output = new ByteArrayOutputStream();
 		data = new byte[microphone.getBufferSize() / 5];
 		microphone.start();
 		Info dataLineInfo = new Info(SourceDataLine.class, getAudioFormat());
@@ -42,7 +38,6 @@ public final class VoiceReplyThread extends TickingThread {
 	@Override
 	public void tick() {
 		intBytesRead = microphone.read(data, 0, chunkSize);
-		output.write(data, 0, intBytesRead);
 		speakers.write(data, 0, intBytesRead);
 	}
 

@@ -13,7 +13,14 @@ import eu.margaritis.aggelos.projects.virtualschool.util.exceptions.InvalidParam
  */
 public final class Math {
 
-	
+	/**
+	 * This method
+	 * 
+	 * @param min
+	 * @param max
+	 * @return
+	 * @throws InvalidParameterException
+	 */
 	public static int getRandomInt(final int min, final int max) throws InvalidParameterException {
 		if (min >= max) {
 			throw new InvalidParameterException("The minimum number can't be bigger than the maximum number.");
