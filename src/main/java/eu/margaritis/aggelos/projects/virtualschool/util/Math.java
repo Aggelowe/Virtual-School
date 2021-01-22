@@ -14,11 +14,12 @@ import eu.margaritis.aggelos.projects.virtualschool.util.exceptions.InvalidParam
 public final class Math {
 
 	/**
-	 * This method
+	 * This method returns a random integer between the given minimum number and the
+	 * given maximum one.
 	 * 
 	 * @param min
 	 * @param max
-	 * @return
+	 * @return	
 	 * @throws InvalidParameterException
 	 */
 	public static int getRandomInt(final int min, final int max) throws InvalidParameterException {
