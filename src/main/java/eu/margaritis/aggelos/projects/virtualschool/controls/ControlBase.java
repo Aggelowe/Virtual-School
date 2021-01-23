@@ -17,7 +17,7 @@ import eu.margaritis.aggelos.projects.virtualschool.init.ModControls;
  */
 @SideOnly(value = Side.CLIENT)
 public class ControlBase extends KeyBinding {
-	
+
 	/**
 	 * This constructor constructs a new Key Binding, ready to be registered in the
 	 * Minecraft registry, to be used afterwards.
@@ -25,7 +25,7 @@ public class ControlBase extends KeyBinding {
 	public ControlBase(String description, int keyCode) {
 		this(description, keyCode, "key.categories.virtualschool");
 	}
-	
+
 	/**
 	 * This constructor constructs a new Key Binding, ready to be registered in the
 	 * Minecraft registry, to be used afterwards.
@@ -35,5 +35,4 @@ public class ControlBase extends KeyBinding {
 		ModControls.CONTROLS.add(this);
 	}
 
-	
 }

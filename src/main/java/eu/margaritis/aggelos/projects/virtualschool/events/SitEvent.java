@@ -42,6 +42,7 @@ public final class SitEvent {
 	 * @see ISittable
 	 */
 	@SubscribeEvent
+	@Deprecated
 	public static void onInteractWithBlock(RightClickBlock event) {
 		EntityPlayer player = event.getEntityPlayer();
 		if (player.getRidingEntity() != null) {

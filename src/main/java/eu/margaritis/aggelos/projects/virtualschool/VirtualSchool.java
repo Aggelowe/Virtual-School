@@ -89,19 +89,4 @@ public final class VirtualSchool {
 		RegistryHandler.postInit(event);
 		Reference.getLogger().info("Post-Initialization was completed succesfully!");
 	}
-
-	/**
-	 * If the project is running on server, this method will be called at the
-	 * starting of the server.
-	 * 
-	 * @param event
-	 * 
-	 * @see FMLPostInitializationEvent
-	 */
-	@EventHandler
-	@SideOnly(Side.SERVER)
-	public static final void serverStart(FMLServerStartedEvent event) {
-		RegistryHandler.serverStart(event);
-		Reference.getLogger().info("The server started succesfully!");
-	}
 }

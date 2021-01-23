@@ -8,11 +8,10 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
+
 import eu.margaritis.aggelos.projects.virtualschool.VirtualSchool;
-import eu.margaritis.aggelos.projects.virtualschool.chat.VoiceReplyThread;
 import eu.margaritis.aggelos.projects.virtualschool.init.ModBlocks;
 import eu.margaritis.aggelos.projects.virtualschool.init.ModItems;
 import eu.margaritis.aggelos.projects.virtualschool.util.IHasModel;
@@ -27,7 +26,7 @@ import eu.margaritis.aggelos.projects.virtualschool.util.Reference;
  */
 @EventBusSubscriber(modid = Reference.MOD_ID)
 public class RegistryHandler {
-	
+
 	/**
 	 * When called, this method registers every item of this mod registered in the
 	 * {@link ModItems} class to the minecraft registry
@@ -103,9 +102,6 @@ public class RegistryHandler {
 	 * @see VirtualSchool#init(FMLInitializationEvent)
 	 */
 	public static final void init(FMLInitializationEvent event) {
-		if (Reference.getSide() == Side.CLIENT) {
-			new VoiceReplyThread().start();
-		}
 	}
 
 	/**
@@ -118,17 +114,5 @@ public class RegistryHandler {
 	 */
 	public static final void postInit(FMLPostInitializationEvent event) {
 
-	}
-
-	/**
-	 * If the project is running on server, this method will be called at the
-	 * starting of the server by the {@link VirtualSchool} class.
-	 * 
-	 * @param event
-	 * 
-	 * @see VirtualSchool#serverStart(FMLServerStartedEvent)
-	 */
-	public static final void serverStart(FMLServerStartedEvent event) {
-		VoiceChatHandler.init();
 	}
 }
