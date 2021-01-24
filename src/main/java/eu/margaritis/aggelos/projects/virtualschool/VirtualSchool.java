@@ -7,10 +7,6 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
 import eu.margaritis.aggelos.projects.virtualschool.proxy.CommonProxy;
 import eu.margaritis.aggelos.projects.virtualschool.util.Reference;
 import eu.margaritis.aggelos.projects.virtualschool.util.handlers.RegistryHandler;
