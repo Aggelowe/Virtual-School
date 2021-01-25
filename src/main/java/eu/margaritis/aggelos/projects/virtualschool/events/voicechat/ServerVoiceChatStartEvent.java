@@ -28,9 +28,7 @@ public final class ServerVoiceChatStartEvent {
 	@SubscribeEvent
 	@Deprecated
 	public static void serverStart(FMLServerStartedEvent event) {
-		if(Reference.getSide() != Side.SERVER) {
-			return;
-		}
+		
 	}
 
 }
