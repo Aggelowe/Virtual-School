@@ -5,13 +5,10 @@ import org.apache.logging.log4j.Logger;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import eu.margaritis.aggelos.projects.virtualschool.init.ModItems;
-import eu.margaritis.aggelos.projects.virtualschool.util.exceptions.InvalidPortException;
-import eu.margaritis.aggelos.projects.virtualschool.util.handlers.VoiceChatHandler;
 
 /**
  * This class contains some methods and variables mandatory for the project to
@@ -53,67 +50,5 @@ public final class Reference {
 
 	public static final void setSide(Side side) {
 		Reference.side = side;
-	}
-
-	/**
-	 * This class contains some mandatory variables and methods for the voice chat
-	 * to work.
-	 * 
-	 * @author aggelos
-	 *
-	 * @see VoiceChatHandler
-	 */
-	public static final class VoiceChatReference {
-
-		private static final float SAMPLE_RATE = 8000.0F;
-		private static final int SAMPLE_SIZE = 16;
-		private static final int CHANNELS = 1;
-		private static final boolean SIGNED = true;
-		private static final boolean BIG_ENDIAN = true;
-		private static final ThreadGroup VOICE_CHAT_THREADS = new ThreadGroup("Voice Chat Threads");
-
-		private static Port voiceChatPort = null;
-
-		public static final Port getVoiceChatPort() {
-			return voiceChatPort;
-		}
-
-		public static final int getVoiceChatPortAsInt() {
-			return voiceChatPort.getPortAsInt();
-		}
-
-		public static final float getSampleRate() {
-			return SAMPLE_RATE;
-		}
-
-		public static final int getSampleSize() {
-			return SAMPLE_SIZE;
-		}
-
-		public static final int getChannels() {
-			return CHANNELS;
-		}
-
-		public static final boolean isSigned() {
-			return SIGNED;
-		}
-
-		public static final boolean isBigEndian() {
-			return BIG_ENDIAN;
-		}
-
-		public static final ThreadGroup getVoiceChatThreads() {
-			return VOICE_CHAT_THREADS;
-		}
-
-		static {
-			try {
-				voiceChatPort = new Port(25000);
-			} catch (InvalidPortException e) {
-				e.printStackTrace();
-				FMLCommonHandler.instance().exitJava(-1, true);
-			}
-		}
-
 	}
 }
