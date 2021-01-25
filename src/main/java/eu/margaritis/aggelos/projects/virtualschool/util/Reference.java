@@ -3,12 +3,9 @@ package eu.margaritis.aggelos.projects.virtualschool.util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
+import eu.margaritis.aggelos.projects.virtualschool.creativetabs.CreativeTabBase;
 import eu.margaritis.aggelos.projects.virtualschool.init.ModItems;
+import net.minecraftforge.fml.relauncher.Side;
 
 /**
  * This class contains some methods and variables mandatory for the project to
@@ -29,12 +26,7 @@ public final class Reference {
 	public static final String SERVER_PROXY_CLASS = "eu.margaritis.aggelos.projects.virtualschool.proxy.ServerProxy";
 	public static final String CLIENT_PROXY_CLASS = "eu.margaritis.aggelos.projects.virtualschool.proxy.ClientProxy";
 
-	private static final CreativeTabs MAIN_TAB = new CreativeTabs(Reference.MOD_ID) {
-		@SideOnly(Side.CLIENT)
-		public ItemStack getTabIconItem() {
-			return new ItemStack(ModItems.NOTEBOOK);
-		}
-	};
+	private static final CreativeTabBase MAIN_TAB = new CreativeTabBase(Reference.MOD_ID, ModItems.NOTEBOOK);
 
 	public static final Side getSide() {
 		return side;
@@ -44,7 +36,7 @@ public final class Reference {
 		return LOGGER;
 	}
 
-	public static CreativeTabs getMainTab() {
+	public static CreativeTabBase getMainTab() {
 		return MAIN_TAB;
 	}
 
