@@ -15,8 +15,7 @@ import eu.margaritis.aggelos.projects.virtualschool.util.Reference;
  * @author Aggelos
  *
  */
-@SideOnly(Side.SERVER)
-@EventBusSubscriber(modid = Reference.MOD_ID)
+@EventBusSubscriber(modid = Reference.MOD_ID, value = Side.SERVER)
 public final class ServerVoiceChatStartEvent {
 
 	/**
@@ -30,7 +29,9 @@ public final class ServerVoiceChatStartEvent {
 	@SubscribeEvent
 	@Deprecated
 	public static void serverStart(FMLServerStartedEvent event) {
-		
+		if(Reference.getSide() != Side.SERVER) {
+			return;
+		}
 	}
 
 }
