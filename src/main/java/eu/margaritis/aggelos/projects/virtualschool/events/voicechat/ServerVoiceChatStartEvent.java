@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
 import eu.margaritis.aggelos.projects.virtualschool.util.Reference;
+import eu.margaritis.aggelos.projects.virtualschool.voicechat.VoiceChatServer;
 
 /**
  * This class is used to manage when the voice chat server opens by listening to
@@ -28,7 +29,7 @@ public final class ServerVoiceChatStartEvent {
 	@SubscribeEvent
 	@Deprecated
 	public static void serverStart(FMLServerStartedEvent event) {
-		
+		VoiceChatServer.start();
 	}
 
 }
