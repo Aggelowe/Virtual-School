@@ -1,6 +1,7 @@
 package eu.margaritis.aggelos.projects.virtualschool.voicechat;
 
 import eu.margaritis.aggelos.projects.virtualschool.events.voicechat.ClientVoiceChatJoinEvent;
+import eu.margaritis.aggelos.projects.virtualschool.events.voicechat.ClientVoiceChatLeaveEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
 /**
@@ -22,6 +23,17 @@ public final class VoiceChatClient {
 	 * @see ClientVoiceChatJoinEvent#voiceChatClientJoin(PlayerLoggedInEvent)
 	 */
 	public static void start() {
+
+	}
+	
+	/**
+	 * This method which must be called only by the
+	 * {@link ClientVoiceChatLeaveEvent#voiceChatClientLeave(PlayerLoggedInEvent)}
+	 * method as the voice chat server must only start when necessary.
+	 * 
+	 * @see ClientVoiceChatLeaveEvent#voiceChatClientLeave(PlayerLoggedInEvent)
+	 */
+	public static void stop() {
 
 	}
 
