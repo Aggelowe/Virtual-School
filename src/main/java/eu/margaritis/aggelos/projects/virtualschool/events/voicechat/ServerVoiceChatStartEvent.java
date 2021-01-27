@@ -28,7 +28,7 @@ public final class ServerVoiceChatStartEvent {
 	 */
 	@SubscribeEvent
 	@Deprecated
-	public static void serverStart(FMLServerStartedEvent event) {
+	public static void voiceChatServerStart(FMLServerStartedEvent event) {
 		VoiceChatServer.start();
 	}
 

@@ -15,6 +15,7 @@ public final class AudioReference {
 	private static final int CHANNEL_AMOUNT = 1;
 	private static final boolean SIGNED = true;
 	private static final boolean BIG_ENDIAN = false;
+	private static final AudioFormat AUDIO_FORMAT = new AudioFormat(SAMPLE_RATE, SAMPLE_SIZE, CHANNEL_AMOUNT, SIGNED, BIG_ENDIAN);
 		
 	public static float getSampleRate() {
 		return SAMPLE_RATE;
@@ -36,8 +37,8 @@ public final class AudioReference {
 		return BIG_ENDIAN;
 	}
 	
-	public static AudioFormat getReferenceAsFormat() {
-		return new AudioFormat(SAMPLE_RATE, SAMPLE_SIZE, CHANNEL_AMOUNT, SIGNED, BIG_ENDIAN);
+	public static AudioFormat getAudioFormat() {
+		return AUDIO_FORMAT;
 	}
 	
 }
