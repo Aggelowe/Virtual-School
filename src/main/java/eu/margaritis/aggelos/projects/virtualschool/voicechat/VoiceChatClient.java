@@ -1,7 +1,11 @@
 package eu.margaritis.aggelos.projects.virtualschool.voicechat;
 
+import java.net.InetSocketAddress;
+import java.net.SocketAddress;
+
 import eu.margaritis.aggelos.projects.virtualschool.events.voicechat.ClientVoiceChatJoinEvent;
 import eu.margaritis.aggelos.projects.virtualschool.events.voicechat.ClientVoiceChatLeaveEvent;
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
 /**
@@ -13,8 +17,8 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
  * @author Aggelos
  *
  */
-public final class VoiceChatClient {
-
+public final class VoiceChatClient implements Runnable {
+		
 	/**
 	 * This method which must be called only by the
 	 * {@link ClientVoiceChatJoinEvent#voiceChatClientJoin(PlayerLoggedInEvent)}
@@ -23,9 +27,16 @@ public final class VoiceChatClient {
 	 * @see ClientVoiceChatJoinEvent#voiceChatClientJoin(PlayerLoggedInEvent)
 	 */
 	public static void start() {
-
+		InetSocketAddress hostAddress = null;
+		final SocketAddress rawAdress = Minecraft.getMinecraft().getConnection().getNetworkManager().getRemoteAddress();
+		if (rawAdress instanceof InetSocketAddress) {
+			hostAddress = (InetSocketAddress) rawAdress;
+		} else {
+			return;
+		}
+		hostAddress.getHostString();
 	}
-	
+
 	/**
 	 * This method which must be called only by the
 	 * {@link ClientVoiceChatLeaveEvent#voiceChatClientLeave(PlayerLoggedInEvent)}
@@ -35,6 +46,11 @@ public final class VoiceChatClient {
 	 */
 	public static void stop() {
 
+	}
+
+	@Override
+	public void run() {
+		
 	}
 
 }

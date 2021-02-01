@@ -1,5 +1,7 @@
 package eu.margaritis.aggelos.projects.virtualschool.util;
 
+import java.io.File;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,8 +18,11 @@ import net.minecraftforge.fml.relauncher.Side;
 public final class Reference {
 
 	private static Side side;
-
+	private static File config;
+	
 	private static final Logger LOGGER = LogManager.getLogger(Reference.NAME);
+	private static final CreativeTabBase MAIN_TAB = new CreativeTabBase(Reference.MOD_ID, ModItems.NOTEBOOK);
+
 
 	public static final String NAME = "Virtual School";
 	public static final String MOD_ID = "virtualschool";
@@ -26,10 +31,13 @@ public final class Reference {
 	public static final String SERVER_PROXY_CLASS = "eu.margaritis.aggelos.projects.virtualschool.proxy.ServerProxy";
 	public static final String CLIENT_PROXY_CLASS = "eu.margaritis.aggelos.projects.virtualschool.proxy.ClientProxy";
 
-	private static final CreativeTabBase MAIN_TAB = new CreativeTabBase(Reference.MOD_ID, ModItems.NOTEBOOK);
 
 	public static final Side getSide() {
 		return side;
+	}
+
+	public static File getConfig() {
+		return config;
 	}
 
 	public static final Logger getLogger() {
@@ -43,4 +51,9 @@ public final class Reference {
 	public static final void setSide(Side side) {
 		Reference.side = side;
 	}
+
+	public static void setConfig(File config) {
+		Reference.config = config;
+	}
+
 }

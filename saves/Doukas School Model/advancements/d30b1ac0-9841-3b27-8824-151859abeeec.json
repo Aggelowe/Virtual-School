@@ -1,0 +1,14 @@
+{
+  "minecraft:end/elytra": {
+    "criteria": {
+      "elytra": "2021-01-28 21:00:46 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/cauldron": {
+    "criteria": {
+      "has_water_bucket": "2021-01-28 21:00:46 +0200"
+    },
+    "done": true
+  }
+}
