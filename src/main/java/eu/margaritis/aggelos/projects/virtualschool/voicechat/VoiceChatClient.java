@@ -17,7 +17,7 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
  * @author Aggelos
  *
  */
-public final class VoiceChatClient implements Runnable {
+public final class VoiceChatClient {
 
 	private static final Thread AUDIO_CAPTURE_THREAD = new Thread(new AudioCaptureThread(), "Audio Capture Thread");
 
@@ -29,14 +29,7 @@ public final class VoiceChatClient implements Runnable {
 	 * @see ClientVoiceChatJoinEvent#voiceChatClientJoin(PlayerLoggedInEvent)
 	 */
 	public static void start() {
-		InetSocketAddress hostAddress = null;
-		final SocketAddress rawAdress = Minecraft.getMinecraft().getConnection().getNetworkManager().getRemoteAddress();
-		if (rawAdress instanceof InetSocketAddress) {
-			hostAddress = (InetSocketAddress) rawAdress;
-		} else {
-			return;
-		}
-		hostAddress.getHostString();
+
 	}
 
 	/**
@@ -50,11 +43,15 @@ public final class VoiceChatClient implements Runnable {
 
 	}
 
-	@Override
-	public void run() {
-
+	private static InetSocketAdress getMinecraftHostAdress() {
+	        InetSocketAddress hostAddress = null;
+		final SocketAddress rawAdress = Minecraft.getMinecraft().getConnection().getNetworkManager().getRemoteAddress();
+		if (rawAdress instanceof InetSocketAddress) {
+			hostAddress = (InetSocketAddress) rawAdress;
+		}
+		return hostAdress;
 	}
-
+	
 	/**
 	 * This class is used to manage the recording of the audio and the transfer of
 	 * it from the client to the server.
