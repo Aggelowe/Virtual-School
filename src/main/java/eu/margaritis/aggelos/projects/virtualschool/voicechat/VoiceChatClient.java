@@ -73,7 +73,7 @@ public final class VoiceChatClient {
 
 		@Override
 		public void run() {
-
+			return;
 		}
 
 	}
