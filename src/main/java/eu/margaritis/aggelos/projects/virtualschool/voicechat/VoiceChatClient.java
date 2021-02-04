@@ -7,6 +7,8 @@ import eu.margaritis.aggelos.projects.virtualschool.events.voicechat.ClientVoice
 import eu.margaritis.aggelos.projects.virtualschool.events.voicechat.ClientVoiceChatLeaveEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * This class is used to start and manage the connection to the voice chat
@@ -17,6 +19,7 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
  * @author Aggelos
  *
  */
+@SideOnly(Side.CLIENT)
 public final class VoiceChatClient {
 
 	private static final Thread AUDIO_CAPTURE_THREAD = new Thread(new AudioCaptureThread(), "Audio Capture Thread");
@@ -43,15 +46,20 @@ public final class VoiceChatClient {
 
 	}
 
-	private static InetSocketAdress getMinecraftHostAdress() {
-	        InetSocketAddress hostAddress = null;
-		final SocketAddress rawAdress = Minecraft.getMinecraft().getConnection().getNetworkManager().getRemoteAddress();
-		if (rawAdress instanceof InetSocketAddress) {
-			hostAddress = (InetSocketAddress) rawAdress;
+	private static InetSocketAddress getMinecraftHostAdress() {
+		if(Minecraft.getMinecraft().isSingleplayer()) {
+			return null;
 		}
-		return hostAdress;
+		if(Minecraft.getMinecraft().isIntegratedServerRunning()) {
+			return new InetSocketAddress("localhost", Minecraft.getMinecraft().getIntegratedServer().getServerPort());
+		}
+		SocketAddress rawAdress = Minecraft.getMinecraft().getConnection().getNetworkManager().getRemoteAddress();
+		if (rawAdress instanceof InetSocketAddress) {
+			return (InetSocketAddress) rawAdress;
+		}
+		return null;
 	}
-	
+
 	/**
 	 * This class is used to manage the recording of the audio and the transfer of
 	 * it from the client to the server.
